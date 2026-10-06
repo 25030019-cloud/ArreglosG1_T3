@@ -13,17 +13,21 @@ internal class Program
         {
             oMiArreglo.Agregar(7);
             oMiArreglo.Agregar(-2);
-            /*oMiArreglo.Agregar(7);
-            oMiArreglo.Agregar(-2);
-            oMiArreglo.Agregar(7);
-
-            oMiArreglo.Agregar(500);*/
+            oMiArreglo.Agregar(8);
+            
             Console.WriteLine(oMiArreglo);
-
+            Console.WriteLine("Insertar 500 en posicion 1");
             Console.ReadKey();
             oMiArreglo.Insertar(500, 1);
+            Console.WriteLine(oMiArreglo);
+
+            Console.WriteLine("Eliminar 500 en posicion 1");
+            Console.ReadKey();
+            oMiArreglo.Eliminar(1);
+            Console.WriteLine(oMiArreglo);
+
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
             throw;
@@ -31,7 +35,7 @@ internal class Program
 
         
 
-        Console.WriteLine(oMiArreglo);
+       // Console.WriteLine(oMiArreglo);
         
         
         /*oMiArreglo.Llenar(1,20);

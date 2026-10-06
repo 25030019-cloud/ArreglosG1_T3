@@ -108,6 +108,29 @@ namespace Arreglos.Logica
             _tope++;
         }
 
+        //Método eliminar
+        public void Eliminar(int posicion)
+        {
+            if(EstaVacio)
+            {
+                throw new Exception("El arreglo esta vacio");
+            }
+            if (posicion < 0)
+            {
+                posicion = 0;
+            }
+            if (posicion > _tope)
+            {
+                posicion = _tope;
+            }
+
+            for (int i = posicion; i< _tope-1; i++)
+            {
+                _arreglo[i] = _arreglo[i + 1];
+            }
+            _tope--;
+        }
+
 
         //Método ToString
         public override string ToString()
