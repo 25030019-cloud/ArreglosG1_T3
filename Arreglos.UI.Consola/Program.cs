@@ -33,11 +33,32 @@ internal class Program
             throw;
         }
 
-        
+        MiArreglo oMyArreglo = new(100);
+        try
+        {
+            Console.WriteLine("\nArreglo\n");
+            oMyArreglo.Llenar();
+            Console.WriteLine(oMyArreglo);
+            Console.ReadKey();
 
-       // Console.WriteLine(oMiArreglo);
-        
-        
+            Console.WriteLine("\nPares\n");
+            var verPares = oMyArreglo.ObtenerPares();
+            Console.WriteLine(verPares);
+            Console.ReadKey();
+
+            Console.WriteLine("\nPares ordenados\n");
+            verPares.Ordenar();
+            Console.WriteLine(verPares);
+            Console.ReadKey();
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+
+        // Console.WriteLine(oMiArreglo);
+
+
         /*oMiArreglo.Llenar(1,20);
 
         Console.WriteLine("Arreglo desordenado\n");
