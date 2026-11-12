@@ -33,27 +33,39 @@ internal class Program
             throw;
         }
 
-        MiArreglo oMyArreglo = new(100);
+        MiArreglo oMyArreglo = new(50000);
         try
         {
             Console.WriteLine("\nArreglo\n");
-            oMyArreglo.Llenar();
+
+            var tiempo1 = DateTime.Now;
+
+            oMyArreglo.Llenar(1,999999);
             Console.WriteLine(oMyArreglo);
+            var tiempo2 = DateTime.Now;
+
+            var restaTiempo = tiempo2 - tiempo1;
+
+            Console.WriteLine($"\nTiempo transcurrido:{restaTiempo.Minutes} minutos, {restaTiempo.Seconds} segundos, {restaTiempo.Milliseconds} milisegundos, {restaTiempo.Nanoseconds} nanosegundos");
             Console.ReadKey();
 
-            Console.WriteLine("\nPares\n");
+           /* Console.WriteLine("\nPares\n");
             var verPares = oMyArreglo.ObtenerPares();
             Console.WriteLine(verPares);
-            Console.ReadKey();
+            Console.ReadKey();*/
 
-            Console.WriteLine("\nPares ordenados\n");
+           /* Console.WriteLine("\nPares ordenados\n");
             verPares.Ordenar();
             Console.WriteLine(verPares);
-            Console.ReadKey();
+            Console.ReadKey();*/
 
             Console.WriteLine("\nPrimos\n");
+            var tiempo3 = DateTime.Now;
             var verPrimos = oMyArreglo.ObtenerPrimos();
+            var tiempo4 = DateTime.Now;
+            var restaTiempo2 = tiempo4 - tiempo3;
             Console.WriteLine(verPrimos);
+            Console.WriteLine($"\nTiempo transcurrido:{restaTiempo2.Minutes} minutos, {restaTiempo2.Seconds} segundos, {restaTiempo2.Milliseconds} milisegundos, {restaTiempo2.Nanoseconds} nanosegundos");
             Console.ReadKey();
 
             Console.WriteLine("\nPrimos ordenados\n");
@@ -63,6 +75,7 @@ internal class Program
         }
         catch (Exception ex)
         {
+            Console.WriteLine(ex.Message);
             throw;
         }
 

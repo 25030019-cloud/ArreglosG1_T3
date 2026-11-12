@@ -136,6 +136,7 @@ namespace Arreglos.Logica
             _tope--;
         }
 
+        //Método ObtenerPares
         public MiArreglo ObtenerPares()
         {
             int contadorPares=0;
@@ -159,7 +160,17 @@ namespace Arreglos.Logica
             return arregloPares;
         }
 
-        //Método ObtenerPares
+        //Método EsPar
+        private bool EsPar(int n)
+        {
+            if (n%2==0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //Método ObtenerPrimos
         public MiArreglo ObtenerPrimos()
         {
             int contadorPrimos = 0;
